@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Platform Post Splitter Pro</title>
-    <meta name="description"
-        content="Advanced text splitter for all social media platforms with character limits, history, and backup.">
-    <meta name="keywords"
-        content="text splitter, post splitter, character limit, social media, Twitter, Facebook, Instagram, LinkedIn, Threads, GitHub, long post, backup, restore, dark mode, responsive, Pakistan">
-    <meta name="author" content="Yasin Ullah, Pakistan">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Multi-Platform Post Splitter Pro</title>
+<meta content="Advanced text splitter for all social media platforms with character limits, history, and backup." name="description"/>
+<meta content="text splitter, post splitter, character limit, social media, Twitter, Facebook, Instagram, LinkedIn, Threads, GitHub, long post, backup, restore, dark mode, responsive, Pakistan" name="keywords"/>
+<meta content="Yasin Ullah, Pakistan" name="author"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<style>
         :root {
             --primary-color: #0077b5;
             --primary-hover: #005e91;
@@ -457,97 +455,77 @@
             }
         }
     </style>
-</head>
-
+<link href="manifest.json" rel="manifest"/></head>
 <body>
-
-    <div class="container">
-        <header>
-            <h1>Multi-Platform Post Splitter Pro</h1>
-            <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
-        </header>
-
-        <main>
-            <textarea id="textInput"
-                placeholder="Paste your long text here. Your draft is saved automatically..."
-                aria-label="Text input for splitting"></textarea>
-
-            <div class="controls">
-                <div class="control-group">
-                    <label for="platformSelect">Platform</label>
-                    <select id="platformSelect" aria-label="Select social media platform">
-                        <option value="custom">Custom Limit</option>
-                        <option value="twitter">X (Twitter) - 280</option>
-                        <option value="facebook">Facebook - 63,206</option>
-                        <option value="instagram">Instagram - 2,200</option>
-                        <option value="linkedin">LinkedIn - 3,000</option>
-                        <option value="threads">Threads - 500</option>
-                        <option value="github">GitHub - (Recommended: 3,000)</option>
-                    </select>
-                </div>
-                <div class="control-group">
-                    <label for="limitInput">Character Limit</label>
-                    <input type="number" id="limitInput" value="3000" min="100" aria-label="Character limit per part">
-                </div>
-                <div class="control-group">
-                    <label for="separatorInput">Part Separator (e.g., #/#)</label>
-                    <input type="text" id="separatorInput" value="(#/#)" placeholder="(#/#)"
-                        aria-label="Separator format for parts">
-                </div>
-                <div class="control-group">
-                    <label for="prefixInput">Part Prefix (Optional)</label>
-                    <input type="text" id="prefixInput" value="" placeholder="e.g., [Part]"
-                        aria-label="Optional prefix for each part">
-                </div>
-                <div class="control-group">
-                    <label for="suffixInput">Part Suffix (Optional)</label>
-                    <input type="text" id="suffixInput" value="" placeholder="e.g., (Read more)"
-                        aria-label="Optional suffix for each part">
-                </div>
-                <div id="charCount" class="control-group">Characters: 0 / 3000</div>
-            </div>
-
-            <div class="main-buttons">
-                <button id="splitBtn" class="btn" aria-label="Split text"><i class="fas fa-cut"></i> Split Text <span
-                        id="splitLoader" class="loader"></span></button>
-                <button id="clearBtn" class="btn" aria-label="Clear text area"><i class="fas fa-eraser"></i>
+<div class="container">
+<header>
+<h1>Multi-Platform Post Splitter Pro</h1>
+<button aria-label="Toggle dark mode" id="themeToggle">🌙</button>
+</header>
+<main>
+<textarea aria-label="Text input for splitting" id="textInput" placeholder="Paste your long text here. Your draft is saved automatically..."></textarea>
+<div class="controls">
+<div class="control-group">
+<label for="platformSelect">Platform</label>
+<select aria-label="Select social media platform" id="platformSelect">
+<option value="custom">Custom Limit</option>
+<option value="twitter">X (Twitter) - 280</option>
+<option value="facebook">Facebook - 63,206</option>
+<option value="instagram">Instagram - 2,200</option>
+<option value="linkedin">LinkedIn - 3,000</option>
+<option value="threads">Threads - 500</option>
+<option value="github">GitHub - (Recommended: 3,000)</option>
+</select>
+</div>
+<div class="control-group">
+<label for="limitInput">Character Limit</label>
+<input aria-label="Character limit per part" id="limitInput" min="100" type="number" value="3000"/>
+</div>
+<div class="control-group">
+<label for="separatorInput">Part Separator (e.g., #/#)</label>
+<input aria-label="Separator format for parts" id="separatorInput" placeholder="(#/#)" type="text" value="(#/#)"/>
+</div>
+<div class="control-group">
+<label for="prefixInput">Part Prefix (Optional)</label>
+<input aria-label="Optional prefix for each part" id="prefixInput" placeholder="e.g., [Part]" type="text" value=""/>
+</div>
+<div class="control-group">
+<label for="suffixInput">Part Suffix (Optional)</label>
+<input aria-label="Optional suffix for each part" id="suffixInput" placeholder="e.g., (Read more)" type="text" value=""/>
+</div>
+<div class="control-group" id="charCount">Characters: 0 / 3000</div>
+</div>
+<div class="main-buttons">
+<button aria-label="Split text" class="btn" id="splitBtn"><i class="fas fa-cut"></i> Split Text <span class="loader" id="splitLoader"></span></button>
+<button aria-label="Clear text area" class="btn" id="clearBtn"><i class="fas fa-eraser"></i>
                     Clear</button>
-            </div>
-            <div class="utility-buttons">
-                <button id="historyBtn" class="btn" aria-label="View splitting history"><i class="fas fa-history"></i>
+</div>
+<div class="utility-buttons">
+<button aria-label="View splitting history" class="btn" id="historyBtn"><i class="fas fa-history"></i>
                     View History</button>
-                <button id="backupBtn" class="btn" aria-label="Backup application data"><i
-                        class="fas fa-download"></i> Backup Data</button>
-                <input type="file" id="restoreInput" accept=".json" style="display: none;"
-                    aria-label="Input for restoring data">
-                <button id="restoreBtn" class="btn" aria-label="Restore application data from file"><i
-                        class="fas fa-upload"></i> Restore Data</button>
-            </div>
-
-            <div id="output"></div>
-        </main>
-    </div>
-
-    <div id="historyModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="historyModalTitle">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="historyModalTitle">Saved History</h2>
-                <span id="closeHistoryModal" class="close-btn" aria-label="Close history modal">×</span>
-            </div>
-            <div id="historyFilters">
-                <input type="search" id="historySearchInput" placeholder="Search in content..."
-                    aria-label="Search history by content">
-                <input type="date" id="historyDateFilter" aria-label="Filter history by date">
-            </div>
-            <div class="history-list" id="historyList" tabindex="0" role="region"
-                aria-label="List of historical split texts">
-            </div>
-        </div>
-    </div>
-
-    <div id="toastMessage" class="toast-message" role="status" aria-live="polite"></div>
-
-    <script>
+<button aria-label="Backup application data" class="btn" id="backupBtn"><i class="fas fa-download"></i> Backup Data</button>
+<input accept=".json" aria-label="Input for restoring data" id="restoreInput" style="display: none;" type="file"/>
+<button aria-label="Restore application data from file" class="btn" id="restoreBtn"><i class="fas fa-upload"></i> Restore Data</button>
+</div>
+<div id="output"></div>
+</main>
+</div>
+<div aria-labelledby="historyModalTitle" aria-modal="true" class="modal" id="historyModal" role="dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h2 id="historyModalTitle">Saved History</h2>
+<span aria-label="Close history modal" class="close-btn" id="closeHistoryModal">×</span>
+</div>
+<div id="historyFilters">
+<input aria-label="Search history by content" id="historySearchInput" placeholder="Search in content..." type="search"/>
+<input aria-label="Filter history by date" id="historyDateFilter" type="date"/>
+</div>
+<div aria-label="List of historical split texts" class="history-list" id="historyList" role="region" tabindex="0">
+</div>
+</div>
+</div>
+<div aria-live="polite" class="toast-message" id="toastMessage" role="status"></div>
+<script>
         const DOM = {
             textInput: document.getElementById('textInput'),
             splitBtn: document.getElementById('splitBtn'),
@@ -1308,6 +1286,5 @@
             }
         });
     </script>
-</body>
-
+<script>if ('serviceWorker' in navigator) { window.addEventListener('load', () => { navigator.serviceWorker.register('./sw.js').then(r => console.log('ServiceWorker registered.')).catch(e => console.log('ServiceWorker registration failed: ', e)); }); }</script></body>
 </html>
