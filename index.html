@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Multi-Platform Post Splitter Pro</title>
-    <meta content="Advanced text splitter for all social media platforms with character limits, history, and backup."
-        name="description" />
-    <meta
-        content="text splitter, post splitter, character limit, social media, Twitter, Facebook, Instagram, LinkedIn, Threads, GitHub, long post, backup, restore, dark mode, responsive, Pakistan"
-        name="keywords" />
-    <meta content="Yasin Ullah, Pakistan" name="author" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Multi-Platform Post Splitter Pro</title>
+<meta content="Advanced text splitter for all social media platforms with character limits, history, and backup." name="description"/>
+<meta content="text splitter, post splitter, character limit, social media, Twitter, Facebook, Instagram, LinkedIn, Threads, GitHub, long post, backup, restore, dark mode, responsive, Pakistan" name="keywords"/>
+<meta content="Yasin Ullah, Pakistan" name="author"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<style>
         :root {
             --primary-color: #0077b5;
             --primary-hover: #005e91;
@@ -459,89 +455,79 @@
             }
         }
     </style>
-    <link href="manifest.json" rel="manifest" />
-</head>
-
+<link href="manifest.json" rel="manifest"/>
+<link href="favicon.ico" rel="icon" type="image/x-icon"/></head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Multi-Platform Post Splitter Pro</h1>
-            <button aria-label="Toggle dark mode" id="themeToggle">🌙</button>
-        </header>
-        <main>
-            <textarea aria-label="Text input for splitting" id="textInput"
-                placeholder="Paste your long text here. Your draft is saved automatically..."></textarea>
-            <div class="controls">
-                <div class="control-group">
-                    <label for="platformSelect">Platform</label>
-                    <select aria-label="Select social media platform" id="platformSelect">
-                        <option value="custom">Custom Limit</option>
-                        <option value="twitter">X (Twitter) - 280</option>
-                        <option value="facebook">Facebook - 63,206</option>
-                        <option value="instagram">Instagram - 2,200</option>
-                        <option value="linkedin">LinkedIn - 3,000</option>
-                        <option value="threads">Threads - 500</option>
-                        <option value="github">GitHub - (Recommended: 3,000)</option>
-                    </select>
-                </div>
-                <div class="control-group">
-                    <label for="limitInput">Character Limit</label>
-                    <input aria-label="Character limit per part" id="limitInput" min="0" type="number" value="3000" />
-                </div>
-                <div class="control-group">
-                    <label for="separatorInput">Part Separator (e.g., #/#)</label>
-                    <input aria-label="Separator format for parts" id="separatorInput" placeholder="(#/#)" type="text"
-                        value="(#/#)" />
-                </div>
-                <div class="control-group">
-                    <label for="prefixInput">Part Prefix (Optional)</label>
-                    <input aria-label="Optional prefix for each part" id="prefixInput" placeholder="e.g., [Part]"
-                        type="text" value="" />
-                </div>
-                <div class="control-group">
-                    <label for="suffixInput">Part Suffix (Optional)</label>
-                    <input aria-label="Optional suffix for each part" id="suffixInput" placeholder="e.g., (Read more)"
-                        type="text" value="" />
-                </div>
-                <div class="control-group" id="charCount">Characters: 0 / 3000</div>
-            </div>
-            <div class="main-buttons">
-                <button aria-label="Split text" class="btn" id="splitBtn"><i class="fas fa-cut"></i> Split Text <span
-                        class="loader" id="splitLoader"></span></button>
-                <button aria-label="Clear text area" class="btn" id="clearBtn"><i class="fas fa-eraser"></i>
+<div class="container">
+<header>
+<h1>Multi-Platform Post Splitter Pro</h1>
+<button aria-label="Toggle dark mode" id="themeToggle">🌙</button>
+</header>
+<main>
+<textarea aria-label="Text input for splitting" id="textInput" placeholder="Paste your long text here. Your draft is saved automatically..."></textarea>
+<div class="controls">
+<div class="control-group">
+<label for="platformSelect">Platform</label>
+<select aria-label="Select social media platform" id="platformSelect">
+<option value="custom">Custom Limit</option>
+<option value="twitter">X (Twitter) - 280</option>
+<option value="facebook">Facebook - 63,206</option>
+<option value="instagram">Instagram - 2,200</option>
+<option value="linkedin">LinkedIn - 3,000</option>
+<option value="threads">Threads - 500</option>
+<option value="github">GitHub - (Recommended: 3,000)</option>
+</select>
+</div>
+<div class="control-group">
+<label for="limitInput">Character Limit</label>
+<input aria-label="Character limit per part" id="limitInput" min="0" type="number" value="3000"/>
+</div>
+<div class="control-group">
+<label for="separatorInput">Part Separator (e.g., #/#)</label>
+<input aria-label="Separator format for parts" id="separatorInput" placeholder="(#/#)" type="text" value="(#/#)"/>
+</div>
+<div class="control-group">
+<label for="prefixInput">Part Prefix (Optional)</label>
+<input aria-label="Optional prefix for each part" id="prefixInput" placeholder="e.g., [Part]" type="text" value=""/>
+</div>
+<div class="control-group">
+<label for="suffixInput">Part Suffix (Optional)</label>
+<input aria-label="Optional suffix for each part" id="suffixInput" placeholder="e.g., (Read more)" type="text" value=""/>
+</div>
+<div class="control-group" id="charCount">Characters: 0 / 3000</div>
+</div>
+<div class="main-buttons">
+<button aria-label="Split text" class="btn" id="splitBtn"><i class="fas fa-cut"></i> Split Text <span class="loader" id="splitLoader"></span></button>
+<button aria-label="Clear text area" class="btn" id="clearBtn"><i class="fas fa-eraser"></i>
                     Clear</button>
-            </div>
-            <div class="utility-buttons">
-                <button aria-label="View splitting history" class="btn" id="historyBtn"><i class="fas fa-history"></i>
+</div>
+<div class="utility-buttons">
+<button aria-label="View splitting history" class="btn" id="historyBtn"><i class="fas fa-history"></i>
                     View History</button>
-                <button aria-label="Backup application data" class="btn" id="backupBtn"><i class="fas fa-download"></i>
+<button aria-label="Backup application data" class="btn" id="backupBtn"><i class="fas fa-download"></i>
                     Backup Data</button>
-                <input accept=".json" aria-label="Input for restoring data" id="restoreInput" style="display: none;"
-                    type="file" />
-                <button aria-label="Restore application data from file" class="btn" id="restoreBtn"><i
-                        class="fas fa-upload"></i> Restore Data</button>
-            </div>
-            <div id="output"></div>
-        </main>
-    </div>
-    <div aria-labelledby="historyModalTitle" aria-modal="true" class="modal" id="historyModal" role="dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="historyModalTitle">Saved History</h2>
-                <span aria-label="Close history modal" class="close-btn" id="closeHistoryModal">×</span>
-            </div>
-            <div id="historyFilters">
-                <input aria-label="Search history by content" id="historySearchInput" placeholder="Search in content..."
-                    type="search" />
-                <input aria-label="Filter history by date" id="historyDateFilter" type="date" />
-            </div>
-            <div aria-label="List of historical split texts" class="history-list" id="historyList" role="region"
-                tabindex="0">
-            </div>
-        </div>
-    </div>
-    <div aria-live="polite" class="toast-message" id="toastMessage" role="status"></div>
-    <script>
+<input accept=".json" aria-label="Input for restoring data" id="restoreInput" style="display: none;" type="file"/>
+<button aria-label="Restore application data from file" class="btn" id="restoreBtn"><i class="fas fa-upload"></i> Restore Data</button>
+</div>
+<div id="output"></div>
+</main>
+</div>
+<div aria-labelledby="historyModalTitle" aria-modal="true" class="modal" id="historyModal" role="dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h2 id="historyModalTitle">Saved History</h2>
+<span aria-label="Close history modal" class="close-btn" id="closeHistoryModal">×</span>
+</div>
+<div id="historyFilters">
+<input aria-label="Search history by content" id="historySearchInput" placeholder="Search in content..." type="search"/>
+<input aria-label="Filter history by date" id="historyDateFilter" type="date"/>
+</div>
+<div aria-label="List of historical split texts" class="history-list" id="historyList" role="region" tabindex="0">
+</div>
+</div>
+</div>
+<div aria-live="polite" class="toast-message" id="toastMessage" role="status"></div>
+<script>
         const DOM = {
             textInput: document.getElementById('textInput'),
             splitBtn: document.getElementById('splitBtn'),
@@ -1302,28 +1288,23 @@
             }
         });
     </script>
-    <script type="module">
-        import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-window.prod.mjs';
 
-        const swUrl = './sw.js';
-        const wb = new Workbox(swUrl);
+<script type="module">
+  import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-window.prod.mjs';
 
-        // This event fires when a new service worker has installed but is waiting to activate.
-        wb.addEventListener('waiting', (event) => {
-            console.log('A new service worker is waiting to activate.');
-            // This sends a message to the waiting service worker, telling it to activate.
-            wb.messageSW({ type: 'SKIP_WAITING' });
-        });
+  const swUrl = './sw.js';
+  const wb = new Workbox(swUrl);
 
-        // This event fires when the new service worker has taken control.
-        wb.addEventListener('controlling', (event) => {
-            console.log('The new service worker is now in control. Reloading page for updates...');
-            window.location.reload();
-        });
+  wb.addEventListener('waiting', () => {
+    console.log('A new service worker is waiting to activate.');
+    wb.messageSW({ type: 'SKIP_WAITING' });
+  });
 
-        // Register the service worker.
-        wb.register();
-    </script>
-</body>
+  wb.addEventListener('controlling', () => {
+    console.log('The new service worker is now in control. Reloading page for updates...');
+    window.location.reload();
+  });
 
+  wb.register();
+</script></body>
 </html>
