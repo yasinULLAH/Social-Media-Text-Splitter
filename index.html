@@ -486,7 +486,7 @@
                 </div>
                 <div class="control-group">
                     <label for="limitInput">Character Limit</label>
-                    <input aria-label="Character limit per part" id="limitInput" min="100" type="number" value="3000" />
+                    <input aria-label="Character limit per part" id="limitInput" min="0" type="number" value="3000" />
                 </div>
                 <div class="control-group">
                     <label for="separatorInput">Part Separator (e.g., #/#)</label>
@@ -809,8 +809,8 @@
             const count = text.length;
             const limit = parseInt(DOM.limitInput.value, 10);
 
-            if (isNaN(limit) || limit < 100) {
-                DOM.limitInput.value = 100;
+            if (isNaN(limit) || limit < 0) {
+                DOM.limitInput.value = 0;
                 // No toast here as it fires too often during typing
             }
 
